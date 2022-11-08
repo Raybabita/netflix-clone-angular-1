@@ -1,0 +1,17 @@
+* {
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 6rem;
+}

@@ -1,0 +1,88 @@
+<div class="container-fluid p-0 m-0 bg-dark">
+    <!-- latest Movie -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
+        *ngFor="let pm of popularMovies?.results; let i =index">
+        <div class="carousel-inner" *ngIf="i < 1">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="{{pm.backdrop_path}}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div> <!-- trending movies -->
+    <div class="row mt-3 pt-3 px-3  bg-dark text-white">
+        <h4>Trending Movies</h4>
+        <div class="col-md-2 mt-3" *ngFor="let movie of trendingMovies?.results; let i =index">
+            <div class="card" style="background-color: #424242" *ngIf="i < 6">
+                <img src="{{movie.backdrop_path}}" class="card-img-top" />
+                <div class="card-body">
+                    <h5>{{movie.title}}</h5>
+                    <p> <span class="text-warning">Rating</span>{{movie.vote_average}}</p>
+                    <p>Language:<span class="p-1"
+                            style="background-color:gray"><b>{{movie.original_language}}</b></span></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- popular movies -->
+    <div class="row mt-3 pt-3 px-3 bg-dark  text-white">
+        <h4>Popular Movies</h4>
+        <div class="col-md-2 mt-3" *ngFor="let pm of popularMovies?.results; let i =index">
+            <div class="card" style="background-color: #424242" *ngIf="i < 6">
+                <img src="{{pm.backdrop_path}}" class="card-img-top" />
+                <div class="card-body">
+                    <h5>{{pm.title}}</h5>
+                    <p> <span class="text-warning">Rating</span>{{pm.vote_average}}</p>
+                    <p>Language:<span class="p-1" style="background-color:gray"><b>{{pm.original_language}}</b></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- upcoming movies -->
+    <div class="row mt-3 pt-3 px-3  text-white" style="background-color: #424242">
+        <h4>Upcoming Movies</h4>
+        <div class="col-md-2 mt-3" *ngFor="let um of upComingMovies?.results; let i =index">
+            <div class="card bg-dark" style="background-color: #424242" *ngIf="i < 6">
+                <img src="{{um.backdrop_path}}" class="card-img-top" />
+                <div class="card-body">
+                    <h5>{{um.title}}</h5>
+                    <p> <span class="text-warning">Rating</span>{{um.vote_average}}</p>
+                    <p>Language:<span class="p-1" style="background-color:gray"><b>{{um.original_language}}</b></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Now Playing movies -->
+    <div class="row mt-3 pt-3 px-3 bg-dark  text-white">
+        <h4>Now playing Movies</h4>
+        <div class="col-md-2 mt-3" *ngFor="let nowplaymovie of  nowPlayingMovies?.results; let i =index">
+            <div class="card" style="background-color: #424242" *ngIf="i < 6">
+                <img src="{{nowplaymovie.backdrop_path}}" class="card-img-top" />
+                <div class="card-body">
+                    <h5>{{nowplaymovie.title}}</h5>
+                    <p> <span class="text-warning">Rating</span>{{nowplaymovie.vote_average}}</p>
+                    <p>Language:<span class="p-1"
+                            style="background-color:gray"><b>{{nowplaymovie.original_language}}</b></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Original movies -->
+    <div class="row mt-3 pt-3 px-3  text-white" style="background-color: #424242">
+        <h4>Original Movies</h4>
+        <div class="col-md-2 mt-3" *ngFor="let originalMovie of  originals?.results; let i =index">
+            <div class="card  bg-dark" *ngIf="i < 6">
+                <img src="{{originalMovie.backdrop_path}}" class="card-img-top" />
+                <div class="card-body">
+                    <h5>{{originalMovie.title}}</h5>
+                    <p> <span class="text-warning">Rating</span>{{originalMovie.vote_average}}</p>
+                    <p>Language:<span class="p-1"
+                            style="background-color:gray"><b>{{originalMovie.original_language}}</b></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
